@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakridge Roofing — Roofing Contractors in Leeds &amp; West Yorkshire</title>
+<style>
+  :root{
+    --navy:#0f2438;
+    --navy-2:#173854;
+    --slate:#3d5468;
+    --brick:#c1502e;
+    --brick-dark:#a13f22;
+    --paper:#f4f2ee;
+    --line:#e0dcd3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:var(--paper);
+    color:#1c1c1c;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Arial Black','Segoe UI',sans-serif;font-weight:800;letter-spacing:-0.5px;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* TOP BAR */
+  .topbar{
+    background:var(--navy);
+    color:#cfd8e0;
+    font-size:0.85em;
+    padding:8px 6%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+  }
+  .topbar a{color:#fff;font-weight:600;}
+  .topbar .badges span{margin-left:18px;}
+
+  /* NAV */
+  nav{
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 6%;
+    border-bottom:3px solid var(--brick);
+    position:sticky;top:0;z-index:100;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.4em;
+    color:var(--navy);
+  }
+  .brand .mark{
+    width:36px;height:36px;
+    background:var(--brick);
+    clip-path:polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+  .nav-links a{
+    margin-left:28px;
+    font-weight:600;
+    color:var(--navy);
+    font-size:0.95em;
+  }
+  .nav-cta{
+    background:var(--brick);
+    color:#fff !important;
+    padding:12px 22px;
+    border-radius:3px;
+    font-weight:700;
+  }
+
+  /* HERO */
+  .hero{
+    background:
+      linear-gradient(120deg, rgba(15,36,56,0.92), rgba(23,56,84,0.85)),
+      repeating-linear-gradient(115deg, #223e56 0px, #223e56 40px, #1a3248 40px, #1a3248 80px);
+    color:#fff;
+    padding:90px 6% 100px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:50px;
+    align-items:center;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--brick);
+    padding:6px 16px;
+    font-size:0.75em;
+    font-weight:700;
+    letter-spacing:1px;
+    border-radius:3px;
+    margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(2.2em,4.5vw,3.4em);line-height:1.1;margin-bottom:20px;}
+  .hero p{font-size:1.1em;color:#d5dde4;max-width:520px;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--brick);
+    color:#fff;
+    padding:16px 32px;
+    font-weight:700;
+    border-radius:3px;
+    display:inline-block;
+    transition:background .25s;
+  }
+  .btn-primary:hover{background:var(--brick-dark);}
+  .btn-secondary{
+    border:2px solid #fff;
+    color:#fff;
+    padding:14px 30px;
+    font-weight:700;
+    border-radius:3px;
+    display:inline-block;
+  }
+  .hero-visual{
+    aspect-ratio:1/1;
+    background:
+      linear-gradient(160deg, #3d5468 0%, #223e56 100%);
+    border-radius:4px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 12px, transparent 12px 24px);
+  }
+  .hero-visual::after{
+    content:"25+ YEARS\A ROOFING\A WEST YORKSHIRE";
+    white-space:pre;
+    position:absolute;
+    bottom:30px;left:30px;
+    color:#fff;
+    font-family:'Arial Black',sans-serif;
+    font-size:1.5em;
+    line-height:1.3;
+  }
+
+  /* TRUST STRIP */
+  .trust-strip{
+    background:#fff;
+    padding:26px 6%;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+  }
+  .trust-item{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;
+    color:var(--navy);
+    font-size:0.95em;
+  }
+  .trust-item .dot{
+    width:10px;height:10px;background:var(--brick);border-radius:50%;
+  }
+
+  section{padding:90px 6%;}
+  .eyebrow{
+    color:var(--brick);
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:0.8em;
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:10px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:2.2em;
+    color:var(--navy);
+    margin-bottom:50px;
+  }
+
+  /* SERVICES GRID */
+  .services-grid{
+    max-width:1150px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:4px solid var(--brick);
+    padding:32px 28px;
+  }
+  .service-card h3{color:var(--navy);font-size:1.2em;margin-bottom:10px;}
+  .service-card p{color:#555;font-size:0.95em;}
+
+  /* WHY US */
+  .why-us{background:var(--navy);color:#fff;}
+  .why-us .section-title{color:#fff;}
+  .why-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
+    text-align:center;
+  }
+  .why-grid .num{
+    font-family:'Arial Black',sans-serif;
+    font-size:2.4em;
+    color:var(--brick);
+  }
+  .why-grid .label{color:#c6d1db;font-size:0.9em;margin-top:6px;}
+
+  /* AREAS */
+  .areas{background:#fff;text-align:center;}
+  .area-chips{
+    max-width:800px;margin:0 auto;
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+  }
+  .area-chips span{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:600;
+    color:var(--navy);
+    font-size:0.9em;
+  }
+
+  /* REVIEWS */
+  .reviews{background:var(--paper);}
+  .review-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+  }
+  .review-card{
+    background:#fff;
+    padding:28px;
+    border:1px solid var(--line);
+  }
+  .stars{color:var(--brick);letter-spacing:2px;margin-bottom:12px;}
+  .review-card p{color:#444;font-size:0.95em;margin-bottom:16px;font-style:italic;}
+  .review-card .who{font-weight:700;color:var(--navy);font-size:0.9em;}
+
+  /* CTA BAND */
+  .cta-band{
+    background:linear-gradient(120deg,var(--brick),var(--brick-dark));
+    color:#fff;
+    text-align:center;
+  }
+  .cta-band h2{font-size:2.1em;margin-bottom:14px;}
+  .cta-band p{margin-bottom:30px;color:#ffe3d8;}
+  .cta-band .btn-secondary{border-color:#fff;}
+
+  footer{
+    background:#0a1a29;
+    color:#9fb1c1;
+    padding:60px 6% 30px;
+  }
+  .footer-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:34px;
+    border-bottom:1px solid #1c3448;
+  }
+  footer h4{color:#fff;font-size:1em;margin-bottom:14px;}
+  footer .brand{color:#fff;margin-bottom:12px;}
+  footer p, footer li{font-size:0.9em;color:#9fb1c1;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:8px;}
+  .footer-bottom{
+    max-width:1100px;margin:0 auto;
+    padding-top:24px;
+    font-size:0.8em;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .services-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>Serving Leeds, Bradford &amp; West Yorkshire since 1998</div>
+  <div class="badges">
+    <span>📞 <a href="tel:+441132345678">0113 234 5678</a></span>
+    <span>Emergency call-outs available</span>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="brand"><span class="mark"></span> OAKRIDGE ROOFING</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services &amp; Pricing</a>
+    <a href="services.html#quote" class="nav-cta">Get a Free Quote</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="hero-badge">FULLY INSURED · NFRC MEMBER</span>
+    <h1>Roofing You Can Rely On, Rain or Shine</h1>
+    <p>
+      Oakridge Roofing has been repairing, replacing and maintaining roofs across Leeds and West
+      Yorkshire for over 25 years. From emergency leak repairs to full re-roofs, we turn up on time
+      and get it right first time.
+    </p>
+    <div class="hero-ctas">
+      <a href="services.html#quote" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:+441132345678" class="btn-secondary">Call 0113 234 5678</a>
+    </div>
+  </div>
+  <div class="hero-visual"></div>
+</header>
+
+<div class="trust-strip">
+  <div class="trust-item"><span class="dot"></span> 10-Year Workmanship Guarantee</div>
+  <div class="trust-item"><span class="dot"></span> Fully Insured &amp; Vetted</div>
+  <div class="trust-item"><span class="dot"></span> 4.9★ Rated on Checkatrade</div>
+  <div class="trust-item"><span class="dot"></span> Free, No-Obligation Quotes</div>
+</div>
+
+<section class="services">
+  <div class="eyebrow">What We Do</div>
+  <h2 class="section-title">Our Roofing Services</h2>
+  <div class="services-grid">
+    <div class="service-card"><h3>Roof Repairs</h3><p>Fast, reliable fixes for leaks, slipped tiles, storm damage and general wear — often same-week.</p></div>
+    <div class="service-card"><h3>Full Re-Roofs</h3><p>Complete tile and slate roof replacements, backed by our 10-year workmanship guarantee.</p></div>
+    <div class="service-card"><h3>Flat Roofing</h3><p>GRP fibreglass and felt flat roof installation and repair for extensions, garages and outbuildings.</p></div>
+    <div class="service-card"><h3>Guttering &amp; Fascias</h3><p>Gutter clearing, repair and full replacement, plus fascia and soffit installation in UPVC.</p></div>
+    <div class="service-card"><h3>Emergency Call-Outs</h3><p>Storm damage or sudden leak? Our on-call team responds fast to stop further damage to your home.</p></div>
+    <div class="service-card"><h3>Roof Inspections</h3><p>Pre-purchase and insurance-related roof surveys with a full written condition report.</p></div>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="eyebrow">Why Homeowners Choose Us</div>
+  <h2 class="section-title">Oakridge By The Numbers</h2>
+  <div class="why-grid">
+    <div><div class="num">25+</div><div class="label">Years Trading</div></div>
+    <div><div class="num">3,400+</div><div class="label">Roofs Completed</div></div>
+    <div><div class="num">10 YR</div><div class="label">Guarantee</div></div>
+    <div><div class="num">4.9★</div><div class="label">Average Rating</div></div>
+  </div>
+</section>
+
+<section class="areas">
+  <div class="eyebrow">Coverage</div>
+  <h2 class="section-title">Areas We Cover</h2>
+  <div class="area-chips">
+    <span>Leeds</span><span>Bradford</span><span>Wakefield</span><span>Harrogate</span>
+    <span>Pudsey</span><span>Otley</span><span>Horsforth</span><span>Wetherby</span>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="eyebrow">Customer Reviews</div>
+  <h2 class="section-title">What Local Homeowners Say</h2>
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Had a leak during a storm and Oakridge sent someone out the same afternoon. Tidy work and fair price."</p>
+      <div class="who">— Sarah M., Horsforth</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Full re-roof on our semi took three days, exactly as quoted. No mess left behind and great communication throughout."</p>
+      <div class="who">— David P., Pudsey</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Really honest quote — didn't try to sell us work we didn't need. Would use again without hesitation."</p>
+      <div class="who">— Priya K., Wetherby</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Got a Roofing Problem? Let's Fix It.</h2>
+  <p>Free, no-obligation quotes across Leeds and West Yorkshire — most enquiries answered within the hour.</p>
+  <a href="services.html#quote" class="btn-secondary">Request Your Free Quote</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="brand" style="font-weight:800;font-size:1.2em;">OAKRIDGE ROOFING</div>
+      <p>Family-run roofing contractors serving Leeds and West Yorkshire since 1998. NFRC member and fully insured for your peace of mind.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services &amp; Pricing</a></li>
+        <li><a href="services.html#quote">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>📞 0113 234 5678</li>
+        <li>✉️ info@oakridgeroofing.co.uk</li>
+        <li>📍 14 Kirkstall Road, Leeds, LS3 1JL</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Oakridge Roofing Ltd. Company No. 04521987. VAT No. GB 812 4459 21.</span>
+    <span>This is a fictional demo site built to test a voice AI booking agent. Not a real business.</span>
+  </div>
+</footer>
+
+</body>
+</html>
